@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <title>本地应用窗口</title>
+    <style>
+      :root {
+        color-scheme: light dark;
+        --bg: #ffffff; --fg: #1f2328; --muted: #656d76; --line: #d8dee4; --accent: #2563eb;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root { --bg:#1c2128; --fg:#e6edf3; --muted:#9198a1; --line:#30363d; --accent:#4f8cf7; }
+      }
+      * { box-sizing: border-box; }
+      body { width:300px; margin:0; padding:12px 14px 14px; background:var(--bg); color:var(--fg);
+             font:13px/1.5 "Segoe UI","Microsoft YaHei",system-ui,sans-serif; }
+      h1 { margin:0 0 10px; font-size:13px; font-weight:600; display:flex; align-items:center; gap:6px; }
+      h1 img { width:16px; height:16px; }
+      .row { display:flex; align-items:center; justify-content:space-between; gap:8px;
+             padding:7px 0; border-top:1px solid var(--line); }
+      .row:first-of-type { border-top:0; }
+      .status { margin:8px 0 0; padding:8px 10px; border-radius:7px; font-size:12px; color:var(--muted);
+                background:color-mix(in srgb, var(--accent) 10%, transparent); word-break:break-all;
+                white-space:pre-wrap; }
+      button { font:inherit; width:100%; margin-top:10px; padding:7px 10px; border-radius:7px;
+               background:var(--accent); color:#fff; border:1px solid transparent; cursor:pointer; }
+      button.secondary { background:transparent; color:var(--fg); border-color:var(--line); }
+      button:disabled { opacity:.5; cursor:default; }
+      label { user-select:none; }
+      input[type=checkbox] { width:16px; height:16px; accent-color:var(--accent); }
+    </style>
+  </head>
+  <body>
+    <h1><img src="icons/icon32.png" alt="" />本地应用窗口</h1>
+
+    <div class="row">
+      <label for="enabled">自动以独立窗口打开</label>
+      <input type="checkbox" id="enabled" />
+    </div>
+    <div class="row">
+      <label for="focusExisting">同址窗口已存在时聚焦它</label>
+      <input type="checkbox" id="focusExisting" />
+    </div>
+
+    <p class="status" id="status">读取中…</p>
+
+    <button id="convert">把当前标签页变成独立窗口</button>
+    <button id="options" class="secondary">打开设置</button>
+
+    <script src="common.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>

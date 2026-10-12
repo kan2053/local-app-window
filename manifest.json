@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "本地应用窗口 · Local App Window",
+  "version": "2.0.0",
+  "description": "按自定义规则，把指定网址自动打开成无标签栏、无书签栏、无地址栏的独立窗口，并可给每个网址设置图标。",
+  "minimum_chrome_version": "102",
+  "permissions": ["tabs", "storage", "scripting"],
+  "optional_host_permissions": ["http://*/*", "https://*/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "本地应用窗口",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

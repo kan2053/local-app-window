@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <title>本地应用窗口 · 设置</title>
+    <style>
+      :root { color-scheme: light dark; --bg:#fff; --fg:#1f2328; --muted:#656d76; --line:#d8dee4; --accent:#2563eb; }
+      @media (prefers-color-scheme: dark) {
+        :root { --bg:#0d1117; --fg:#e6edf3; --muted:#9198a1; --line:#30363d; --accent:#4f8cf7; }
+      }
+      * { box-sizing: border-box; }
+      body { margin:0; padding:28px 20px 60px; background:var(--bg); color:var(--fg);
+             font:14px/1.6 "Segoe UI","Microsoft YaHei",system-ui,sans-serif; }
+      main { max-width: 940px; margin: 0 auto; }
+      h1 { font-size:20px; margin:0 0 4px; }
+      p.lead { margin:0 0 22px; color:var(--muted); font-size:13px; }
+      section { border:1px solid var(--line); border-radius:10px; padding:14px 16px; margin-bottom:14px; }
+      h2 { font-size:13px; margin:0 0 10px; color:var(--muted); font-weight:600; }
+      .grid { display:flex; flex-wrap:wrap; gap:14px 22px; align-items:center; }
+      label { user-select:none; }
+      input[type=number], select, input[type=text] {
+        font:inherit; color:var(--fg); background:transparent; border:1px solid var(--line);
+        border-radius:7px; padding:6px 9px; }
+      input[type=number] { width:92px; }
+      input[type=checkbox] { width:16px; height:16px; accent-color:var(--accent); }
+      #rulesWrap { overflow-x:auto; }
+      table { width:100%; border-collapse:collapse; }
+      th { text-align:left; font-size:12px; color:var(--muted); font-weight:600; padding:0 8px 8px 0; }
+      td { padding:5px 8px 5px 0; vertical-align:middle; }
+      td.pat input { width:100%; min-width:230px; }
+      td.note input { width:110px; }
+      .icon-cell { display:flex; align-items:center; gap:8px; }
+      .icon-cell img { width:24px; height:24px; border-radius:5px; background:rgba(128,128,128,.15); object-fit:contain; }
+      .icon-cell input[type=file] { display:none; }
+      button { font:inherit; padding:7px 14px; border-radius:7px; border:1px solid var(--line);
+               background:transparent; color:var(--fg); cursor:pointer; }
+      button.primary { background:var(--accent); color:#fff; border-color:transparent; }
+      button.link { border:0; padding:4px 6px; color:var(--muted); text-decoration:underline; }
+      #msg { color:var(--muted); font-size:13px; }
+      .hint { color:var(--muted); font-size:12px; margin:8px 0 0; }
+      .row-actions { text-align:right; white-space:nowrap; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>本地应用窗口</h1>
+      <p class="lead">新建的标签页一旦命中规则，就自动搬进无标签栏 / 无书签栏 / 无地址栏的独立窗口。</p>
+
+      <section>
+        <h2>通用</h2>
+        <div class="grid">
+          <label><input type="checkbox" id="enabled" /> 启用自动转换</label>
+          <label><input type="checkbox" id="focusNewWindow" /> 新窗口获得焦点</label>
+          <label><input type="checkbox" id="focusExisting" /> 同址窗口已存在时聚焦它</label>
+          <label>宽 <input type="number" id="width" min="320" max="4000" step="10" /></label>
+          <label>高 <input type="number" id="height" min="240" max="4000" step="10" /></label>
+        </div>
+      </section>
+
+      <section>
+        <h2>规则（从上到下依次匹配，第一条命中即生效）</h2>
+        <div id="rulesWrap">
+          <table>
+            <thead>
+              <tr>
+                <th style="width:52px">启用</th>
+                <th style="width:170px">匹配方式</th>
+                <th>网址 / 片段</th>
+                <th style="width:110px">备注</th>
+                <th style="width:150px">图标</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="rules"></tbody>
+          </table>
+        </div>
+        <p class="hint" id="matchHint"></p>
+        <p class="hint">
+          图标通过替换页面 <b>favicon</b> 实现，需要该站点的访问权限（保存时自动申请；被拒绝则规则照常生效、只是图标不显示）。<br />
+          <b>注意：扩展无法设置窗口的任务栏图标</b> —— Manifest V3 没有这个 API，这是 Chromium 平台限制。
+          需要真正的自定义任务栏图标，请用 <code>tools/make-app-shortcut.ps1</code> 生成 <code>--app=</code> 快捷方式，详见 README。
+        </p>
+        <div style="margin-top:10px"><button id="add">+ 添加规则</button></div>
+      </section>
+
+      <div class="grid">
+        <button id="save" class="primary">保存</button>
+        <button id="reset">恢复默认</button>
+        <span id="msg"></span>
+      </div>
+    </main>
+    <script src="common.js"></script>
+    <script src="options.js"></script>
+  </body>
+</html>

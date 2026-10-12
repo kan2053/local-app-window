@@ -1,0 +1,67 @@
+# 授权条款 · License
+
+本项目 **本地应用窗口 / Local App Window**（含全部源代码、图标、脚本与文档）
+免费提供，遵循以下条款。
+
+**一句话：随便用、随便改、随便分享；但严禁拿去卖钱。用出问题自己担着。**
+
+---
+
+## 一、你可以自由地
+
+- **使用**：下载、安装、运行，包括在公司或商业环境中使用
+- **修改**：复制、修改源代码，制作你自己的版本
+- **分享**：转发、转载、镜像、二次分发本项目的原始文件或你的修改版
+- **收录**：打包进自己的工具集、软件合集、教程、博客、视频、公众号文章中
+
+## 二、你不得
+
+- **二次销售（核心禁止项）**
+  不得将本项目、或其修改版、衍生版、汉化版、换皮版，以任何形式**收费售卖**：
+  包括但不限于直接售卖、出租、订阅收费、放入付费墙或付费会员专属渠道、
+  捆绑进付费产品中销售、以及在应用商店中作为付费商品上架。
+  简言之：**你可以靠它省时间，但不能靠它本身赚钱。**
+
+- **移除署名**
+  不得移除或篡改本授权条款、版权声明与原作者署名。
+
+- **冒充作者**
+  不得声称你是本项目的原始作者，或以原作者名义发布。
+
+## 三、免责声明
+
+> **本软件按「原样」提供，不附带任何明示或暗示的担保。**
+
+使用本软件所导致的**任何后果**——包括但不限于浏览器行为异常、扩展冲突、
+浏览器设置或配置文件被修改、书签或数据丢失、网页显示异常、系统卡顿或故障、
+以及由此产生的任何直接或间接损失——**均由使用者自行承担全部风险与责任**，
+作者及贡献者不承担任何责任，亦无义务提供支持、修复或赔偿。
+
+- 本扩展会创建浏览器窗口、读取标签页地址、并可能修改网页图标（favicon）。
+  安装前请自行评估这些行为是否符合你的使用场景。
+- 请自行做好浏览器配置与数据的备份。
+- 本扩展未上架任何应用商店，请仅从本仓库获取，谨防第三方篡改版本。
+
+**下载、安装或使用本项目，即视为你已阅读、理解并同意以上全部条款。**
+若不同意，请不要使用。
+
+---
+
+## English Summary
+
+This project (**Local App Window**) is free to use, modify and share — **but you may NOT sell it.**
+
+**You MAY:** use it (including at work), modify it, redistribute it, include it in tutorials or
+collections, and share your modified version.
+
+**You may NOT:** sell, rent, sublicense, paywall or otherwise monetize this project or any
+modified/derived version of it; remove this license or the author's attribution; or claim
+original authorship.
+
+**Disclaimer:** THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND. Any consequence
+of using it — browser misbehaviour, extension conflicts, changed browser settings, data loss,
+system problems, or any direct or indirect damages — is **entirely at your own risk**. The
+authors accept no liability and have no obligation to provide support, fixes or compensation.
+Back up your browser profile before installing.
+
+By downloading, installing or using this project you agree to these terms.
