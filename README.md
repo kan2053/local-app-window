@@ -46,13 +46,18 @@
 
 还没有上架商店，用「加载已解压的扩展程序」安装，30 秒搞定。
 
-1. 下载本仓库（`Code` → `Download ZIP`）并解压。
-2. 打开扩展管理页：
+**方式一（推荐，只装插件）**：到 [Releases](https://github.com/kan2053/local-app-window/releases/latest) 下载 `local-app-window-v2.0.0.zip`，解压得到一个含 `manifest.json` 的文件夹。
+
+**方式二（含开发工具）**：`Code` → `Download ZIP` 下载整个仓库，解压后进入 `local-app-window/` 子目录。
+
+然后：
+
+1. 打开扩展管理页：
    - Chrome：地址栏输入 `chrome://extensions`
    - Edge：地址栏输入 `edge://extensions`
-3. 打开 **开发者模式**。
-4. 点 **加载已解压的扩展程序**，选择含 `manifest.json` 的那一层目录（也就是 `local-app-window/`）。
-5. 建议点 **固定**，把图标放到工具栏。
+2. 打开 **开发者模式**。
+3. 点 **加载已解压的扩展程序**，选择含 `manifest.json` 的那一层目录。
+4. 建议点 **固定**，把图标放到工具栏。
 
 ---
 
